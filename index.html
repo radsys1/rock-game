@@ -60,6 +60,41 @@
                     break;
             }
         }
+
+        const game = () => {
+
+            const results = {
+                human: 0,
+                computer: 0,
+                tie: 0
+            }
+
+            for (let i = 0; i<5; i++) {
+
+                let playerTime = prompt('Declare your stand!');
+                let roundResult = playRound(playerTime, computerPlay());
+                console.log(roundResult);
+                switch(true) {
+                    case (roundResult == 'It is a tie'):
+                        results.tie++;
+                        break;
+                    case (roundResult == 'Human Wins'): 
+                        results.human++;
+                        break;
+                    case (roundResult == 'Computer Wins'):
+                        results.computer++
+                }
+
+            }
+
+            if (results.human >= 3) {
+                return 'Human Wins'
+            } else if (results.computer >= 3) {
+                return 'Computer Wins'
+            } else {
+                return 'It is a tie'
+            }
+        }
     </script>
     
 </body>
