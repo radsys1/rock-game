@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissors Game</title>
+</head>
+<body>
+    <script>
+
+        function computerPlay() {
+            const random = (Math.random() * 3)
+            if (random <= 1) {
+                return 'Rock'
+            } else if (random <= 2) {
+                return 'Paper'
+            } else {
+                return 'Scissor'
+            }
+        }
+
+        var computerTime = computerPlay();
+        const playerTime = 'Paper';
+
+        function playRound(playerTime, computerTime) {
+
+            switch (playerTime == 'Rock') {
+                case (computerTime == playerTime): 
+                    return 'It is a tie';
+                    break;
+                case (computerTime == 'Paper'): 
+                    return 'Computer Wins';
+                    break;
+                case (computerTime == 'Scissor'): 
+                    return 'Human Wins'
+                    break;
+            }
+
+            switch (playerTime == 'Scissor') {
+                case (computerTime == playerTime): 
+                    return 'It is a tie';
+                    break;
+                case (computerTime == 'Paper'): 
+                    return 'Player Wins';
+                    break;
+                case (computerTime == 'Rock'): 
+                    return 'Computer Wins'
+                    break;
+            }
+
+            switch (playerTime == 'Paper') {
+                case (computerTime == playerTime): 
+                    return 'It is a tie';
+                    break;
+                case (computerTime == 'Rock'): 
+                    return 'Human Wins';
+                    break;
+                case (computerTime == 'Scissor'): 
+                    return 'Computer Wins'
+                    break;
+            }
+        }
+    </script>
+    
+</body>
+</html>
